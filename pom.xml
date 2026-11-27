@@ -29,6 +29,15 @@
                     <target>8</target>
                 </configuration>
             </plugin>
+            <!-- NB: javadoc otherwise derives a module name for every dependency jar and -->
+            <!-- fails on turbojpeg, which has a class in the default package. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <legacyMode>true</legacyMode>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
     <name>MoBIE Fiji Viewer</name>
